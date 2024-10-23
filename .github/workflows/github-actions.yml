@@ -10,5 +10,5 @@ jobs:
       - run: docker login -p ${{SECRET_MLOPS_TP1}}
       - run: docker push xcosmicotter/mlops_tp1    
       - run: ssh ubuntu@17.2.2.1 "docker compose pull xcosmicotter/mlops_tp1"
-      - rn: "(re)start container"
+      - run: "(re)start container"
 
