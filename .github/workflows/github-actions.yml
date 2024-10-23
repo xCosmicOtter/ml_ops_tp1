@@ -5,7 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 
-      - run: echo "${{ secrets.SECRET_MLOPS_TP1 }}"
       - run: docker build -t ml_model .
       - run: docker tag ml_model xcosmicotter/mlops_tp1
       - run: echo "${{ secrets.SECRET_MLOPS_TP1 }}" | docker login -u "${{secrets.SECRET_MLOPS_TP1}}"  --password-stdin
