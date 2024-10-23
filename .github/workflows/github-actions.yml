@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v4 
       - run: docker build -t ml_model .
       - run: docker tag ml_model xcosmicotter/mlops_tp1
-      - run: echo "${{ secrets.SECRET_MLOPS_TP1 }}" | docker login -u "${{secrets.SECRET_MLOPS_TP1}}"  --password-stdin
+      - run: echo "${{ secrets.SECRET_MLOPS_TP1 }}" | docker login -u "${{ secrets.SECRET_MLOPS_TP1_USERNAME }}"  --password-stdin
       - run: docker push xcosmicotter/mlops_tp1:latest
 
