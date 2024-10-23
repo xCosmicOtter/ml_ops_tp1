@@ -10,6 +10,7 @@ jobs:
       - run: echo "${{ secrets.SECRET_MLOPS_TP1 }}" | docker login -u "${{ secrets.SECRET_MLOPS_TP1_USERNAME }}"  --password-stdin
       - run: docker push xcosmicotter/mlops_tp1:latest
       - run: sudo apt-get update && sudo apt-get install -y sshpass
+      
       - run: sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ubuntu@20.86.55.5
       - run: docker pull xcosmicotter/mlops_tp1:latest
       - run: docker run -d -p 80:80 xcosmicotter/mlops_tp1:latest
