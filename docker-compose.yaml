@@ -2,7 +2,7 @@ services:
   fastapi-app:
     build: .
     ports:
-      - "8756:8000"
+      - "8756:8756"
     volumes:
       - .:/app
     environment:
